@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="age_calc" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="my_age_bg" translatesAutoresizingMaskIntoConstraints="NO" id="3qe-yd-E0e">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8yl-8C-boR">
+                                <rect key="frame" x="25" y="144" width="364" height="50"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Select date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kNN-ON-zaI">
+                                        <rect key="frame" x="20" y="0.0" width="344" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="kNN-ON-zaI" secondAttribute="trailing" id="6Rw-mj-1cG"/>
+                                    <constraint firstItem="kNN-ON-zaI" firstAttribute="top" secondItem="8yl-8C-boR" secondAttribute="top" id="TGv-cg-QeW"/>
+                                    <constraint firstAttribute="height" constant="50" id="XSx-gB-ozs"/>
+                                    <constraint firstItem="kNN-ON-zaI" firstAttribute="leading" secondItem="8yl-8C-boR" secondAttribute="leading" constant="20" id="dCg-CM-xSM"/>
+                                    <constraint firstAttribute="bottom" secondItem="kNN-ON-zaI" secondAttribute="bottom" id="zBE-Xo-Ibj"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sHc-oT-Sdj">
+                                <rect key="frame" x="35" y="570" width="344" height="27.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="sHc-oT-Sdj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="35" id="2mZ-PE-fac"/>
+                            <constraint firstItem="3qe-yd-E0e" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ExZ-f5-VzU"/>
+                            <constraint firstItem="sHc-oT-Sdj" firstAttribute="top" secondItem="8yl-8C-boR" secondAttribute="bottom" constant="376" id="U39-Lg-UTl"/>
+                            <constraint firstItem="8yl-8C-boR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="XEg-3x-gV4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sHc-oT-Sdj" secondAttribute="trailing" constant="35" id="cIj-w6-0LP"/>
+                            <constraint firstAttribute="bottom" secondItem="3qe-yd-E0e" secondAttribute="bottom" id="dc6-AT-gti"/>
+                            <constraint firstItem="8yl-8C-boR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="eov-lS-PaT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8yl-8C-boR" secondAttribute="trailing" constant="25" id="ilM-6F-37s"/>
+                            <constraint firstItem="3qe-yd-E0e" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="o8d-BD-zUe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3qe-yd-E0e" secondAttribute="trailing" id="vCp-XL-JQg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="dateview" destination="8yl-8C-boR" id="whv-H9-3lj"/>
+                        <outlet property="lbl_cal" destination="sHc-oT-Sdj" id="fsj-RG-67O"/>
+                        <outlet property="txt_date" destination="kNN-ON-zaI" id="QGp-QE-Yq5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="114.50892857142857"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="my_age_bg" width="750" height="1350"/>
+    </resources>
+</document>
