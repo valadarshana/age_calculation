@@ -37,11 +37,30 @@ class ViewController: UIViewController {
         
         toolbar.setItems([btndone,btncancel], animated: true) //add done button in Toolbar
     }
+    func age_cal(date:Int,month:Int,year:Int){
+        var arr = [Int] = [31,28,31,30,31,30,31,31,30,31,30,31]
+        var pdate=25
+        var pm=9
+        var py=2020;
+        if pdate > date{
+            pdate+=arr[month-1]
+            pm-=1
+        }
+        if pm>month {
+            py-=1
+            pm+=12
+        }
+        lbl_cal.text = "you are \(py-year) year, \(pm-month) month and \(pdate-date) days old"
+    }
     @objc func cancel_click(){
         self.view.endEditing(true)
     }
     @objc func done_click(){
         print(datepicker.date)
+        var date=16
+        var month=04
+        var year=1999
+        age_cal(date:date,month:month,year:year)
         self.view.endEditing(true) // Ending all editing
         txt_date.text="\(datepicker.date)"
     }
