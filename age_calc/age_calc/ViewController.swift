@@ -38,10 +38,17 @@ class ViewController: UIViewController {
         toolbar.setItems([btndone,btncancel], animated: true) //add done button in Toolbar
     }
     func age_cal(date:Int,month:Int,year:Int){
-        var arr = [Int] = [31,28,31,30,31,30,31,31,30,31,30,31]
-        var pdate=25
-        var pm=9
-        var py=2020;
+        let arr:[Int] = [31,28,31,30,31,30,31,31,30,31,30,31]
+        
+        let formater = DateFormatter()
+              formater.dateFormat = "dd-MM-yyyy"
+              let mystringfd=formater.string(from: Date())
+        let arr_date=mystringfd.components(separatedBy: "-")
+        
+        var pdate=Int(arr_date[0])!
+        var pm=Int(arr_date[1])!
+        var py=Int(arr_date[2])!
+        
         if pdate > date{
             pdate+=arr[month-1]
             pm-=1
@@ -56,13 +63,36 @@ class ViewController: UIViewController {
         self.view.endEditing(true)
     }
     @objc func done_click(){
-        print(datepicker.date)
-        var date=16
-        var month=04
-        var year=1999
-        age_cal(date:date,month:month,year:year)
+        
+        
+        let diffInDays = Calendar.current.dateComponents([.day], from: datepicker.date, to: Date()).day
+        var days=9125
+
+        let year = days/366
+         days = days%366
+        let m = days/30
+        let d=days%30
+        
+        
+        print("Total Days :",diffInDays)
+        print("days ",days)
+        lbl_cal.text = "\(year) \(m) \(d)"
+        
+        
+//        print(datepicker.date)
+//        let formater = DateFormatter()
+//        formater.dateFormat = "dd-MM-yyyy"
+//        let mystringfd=formater.string(from: datepicker.date)
+//        txt_date.text=mystringfd
+//
+//
+//        let arr_date=mystringfd.components(separatedBy: "-")
+//        let date = Int(arr_date[0])
+//        let month = Int(arr_date[1])
+//        let year = Int(arr_date[2])
+//        age_cal(date:date!,month:month!,year:year!)
         self.view.endEditing(true) // Ending all editing
-        txt_date.text="\(datepicker.date)"
+        
     }
 
 }
