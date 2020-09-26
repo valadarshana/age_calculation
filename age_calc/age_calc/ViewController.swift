@@ -64,21 +64,29 @@ class ViewController: UIViewController {
     }
     @objc func done_click(){
         
-        
-        let diffInDays = Calendar.current.dateComponents([.day], from: datepicker.date, to: Date()).day
-        var days=9125
 
-        let year = days/366
-         days = days%366
-        let m = days/30
-        let d=days%30
+        let diffInDays = Calendar.current.dateComponents([.day], from: datepicker.date, to: Date()).day
+        let diffInMonth = Calendar.current.dateComponents([.month], from: datepicker.date, to: Date()).month
+         let diffInWeek = Calendar.current.dateComponents([.weekOfYear], from: datepicker.date, to: Date()).weekOfYear
         
-        
-        print("Total Days :",diffInDays)
-        print("days ",days)
-        lbl_cal.text = "\(year) \(m) \(d)"
-        
-        
+        let diffInYear = Calendar.current.dateComponents([.year,.month,.day], from: datepicker.date, to: Date())
+
+        print(diffInYear.day)
+
+     //   var days=9125
+
+//        let year = days/366
+//         days = days%366
+//        let m = days/30
+//        let d=days%30
+//
+//
+//
+//        print("Total Days :",diffInDays)
+//        print("days ",days)
+//        lbl_cal.text = "\(year) \(m) \(d)"
+//
+//
 //        print(datepicker.date)
 //        let formater = DateFormatter()
 //        formater.dateFormat = "dd-MM-yyyy"
@@ -87,10 +95,31 @@ class ViewController: UIViewController {
 //
 //
 //        let arr_date=mystringfd.components(separatedBy: "-")
-//        let date = Int(arr_date[0])
-//        let month = Int(arr_date[1])
-//        let year = Int(arr_date[2])
-//        age_cal(date:date!,month:month!,year:year!)
+//        let date = Int(arr_date[0])!
+//        let month = Int(arr_date[1])!
+//        let year = Int(arr_date[2])!
+//            //age_cal(date:date,month:month,year:year)
+        
+        
+        
+      //  let formater = DateFormatter()
+//              formater.dateFormat = "dd-MM-yyyy"
+//              let mystringfd2=formater.string(from: Date())
+//        let arr_date2=mystringfd2.components(separatedBy: "-")
+//
+//        var pdate=Int(arr_date2[0])!
+//        var pm=Int(arr_date2[1])!
+//        var py=Int(arr_date2[2])!
+//
+//
+//        let calendar = Calendar.current
+//              let startComponents = DateComponents(year: year, month: month, day: date)
+//              let endComponents = DateComponents(year: py, month: pm, day: pdate)
+//
+//              let dateComponents = calendar.dateComponents([.year, .month, .day], from: startComponents, to: endComponents)
+//              print(dateComponents) // prints: year: 4 month: 5 day: 9 isLeapMonth: false
+//
+//
         self.view.endEditing(true) // Ending all editing
         
     }
