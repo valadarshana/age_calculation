@@ -37,71 +37,15 @@ class ViewController: UIViewController {
         
         toolbar.setItems([btndone,btncancel], animated: true) //add done button in Toolbar
     }
-    func age_cal(date:Int,month:Int,year:Int){
-        let arr:[Int] = [31,28,31,30,31,30,31,31,30,31,30,31]
-        
-        let formater = DateFormatter()
-              formater.dateFormat = "dd-MM-yyyy"
-              let mystringfd=formater.string(from: Date())
-        let arr_date=mystringfd.components(separatedBy: "-")
-        
-        var pdate=Int(arr_date[0])!
-        var pm=Int(arr_date[1])!
-        var py=Int(arr_date[2])!
-        
-        if pdate > date{
-            pdate+=arr[month-1]
-            pm-=1
-        }
-        if pm>month {
-            py-=1
-            pm+=12
-        }
-        lbl_cal.text = "you are \(py-year) year, \(pm-month) month and \(pdate-date) days old"
-    }
     @objc func cancel_click(){
         self.view.endEditing(true)
     }
     @objc func done_click(){
         
-
-        let diffInDays = Calendar.current.dateComponents([.day], from: datepicker.date, to: Date()).day
-        let diffInMonth = Calendar.current.dateComponents([.month], from: datepicker.date, to: Date()).month
-         let diffInWeek = Calendar.current.dateComponents([.weekOfYear], from: datepicker.date, to: Date()).weekOfYear
-        
         let diffInYear = Calendar.current.dateComponents([.year,.month,.day], from: datepicker.date, to: Date())
-
-        print(diffInYear.day)
-
-     //   var days=9125
-
-//        let year = days/366
-//         days = days%366
-//        let m = days/30
-//        let d=days%30
-//
-//
-//
-//        print("Total Days :",diffInDays)
-//        print("days ",days)
-//        lbl_cal.text = "\(year) \(m) \(d)"
-//
-//
-//        print(datepicker.date)
-//        let formater = DateFormatter()
-//        formater.dateFormat = "dd-MM-yyyy"
-//        let mystringfd=formater.string(from: datepicker.date)
-//        txt_date.text=mystringfd
-//
-//
-//        let arr_date=mystringfd.components(separatedBy: "-")
-//        let date = Int(arr_date[0])!
-//        let month = Int(arr_date[1])!
-//        let year = Int(arr_date[2])!
-//            //age_cal(date:date,month:month,year:year)
+        lbl_cal.text = "you are \(diffInYear.year!) year, \(diffInYear.month!) month and \(diffInYear.day!) days old"
         
-        
-        
+
       //  let formater = DateFormatter()
 //              formater.dateFormat = "dd-MM-yyyy"
 //              let mystringfd2=formater.string(from: Date())
@@ -110,15 +54,6 @@ class ViewController: UIViewController {
 //        var pdate=Int(arr_date2[0])!
 //        var pm=Int(arr_date2[1])!
 //        var py=Int(arr_date2[2])!
-//
-//
-//        let calendar = Calendar.current
-//              let startComponents = DateComponents(year: year, month: month, day: date)
-//              let endComponents = DateComponents(year: py, month: pm, day: pdate)
-//
-//              let dateComponents = calendar.dateComponents([.year, .month, .day], from: startComponents, to: endComponents)
-//              print(dateComponents) // prints: year: 4 month: 5 day: 9 isLeapMonth: false
-//
 //
         self.view.endEditing(true) // Ending all editing
         
